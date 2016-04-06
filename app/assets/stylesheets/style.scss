@@ -1,0 +1,66 @@
+/*Palete Aspirin-C-color
+#225378
+#1695A3
+#ACF0F2
+#F3FFE2
+#EB7F00
+*/
+
+html, body {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+}
+
+.btn {
+  background-color: #225378;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 10px 12px;
+}
+
+#logo {
+  font-size: 1.2em;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.be-blue {
+  background-color: #225378;
+}
+
+.no-list {
+  list-style: none;
+}
+
+.no-style {
+  text-decoration: none !important;
+  color: #ACF0F2;
+}
+
+.white {
+  color: #ACF0F2;
+}
+
+.large-padding {
+  padding: 10px 7px;
+}
+
+.field {
+  margin-top: 1em;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  width: 100%;
+  display: block;
+  padding: 10px 0px;
+  font-size: 1.2em;
+}
