@@ -9,7 +9,12 @@
 html, body {
   margin: 0px;
   font-family: 'Roboto', sans-serif;
-  background-color: white;
+  background-color: #F3FFE2;
+  color: #225378; 
+}
+
+input, textarea {
+  background-color: #F3FFE2;
 }
 
 .btn {
@@ -22,7 +27,7 @@ html, body {
   padding: 10px 12px;
 }
 
-a,a:visited {
+a, a:visited {
   color: inherit;
   text-decoration: none;
 }
@@ -53,11 +58,11 @@ a,a:visited {
 
 .no-style {
   text-decoration: none !important;
-  color: #ACF0F2;
+  color: #F3FFE2;
 }
 
 .white {
-  color: #ACF0F2;
+  color: #F3FFE2;
 }
 
 .large-padding {

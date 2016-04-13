@@ -8,20 +8,24 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-
     <header>
       <nav class="be-blue white large-padding">
         <ul class="no-list row center-xs middle-xs">
           <li class="col-md">
-            <h1 class="no-margin" id="logo"> Blog facilito </h1>
+            <h1 class="no-margin" id="logo"> <%= link_to "Blog facilito", root_path, class: 'no-style' %> </h1>
           </li>
-          <li class="col-md"> <%= link_to "Inicio", root_path, class: 'no-style' %> </li>
           <li class="col-md"> <%= link_to "Diseño", root_path, class: 'no-style' %> </li>
           <li class="col-md"> <%= link_to "Programación", root_path, class: 'no-style' %> </li>
           <li class="col-md"> <%= link_to "Tecnología", root_path, class: 'no-style' %> </li>
+          <% if user_signed_in? %>
+            <li class="col-md"> <%= link_to "Cerra sesión", destroy_user_session_path, method: :delete, class: 'no-style' %> </li>
+          <% end %>
         </ul>
       </nav>
     </header>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <div class="container">
       <%= yield %>
