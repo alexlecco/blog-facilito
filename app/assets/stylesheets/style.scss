@@ -10,7 +10,7 @@ html, body {
   margin: 0px;
   font-family: 'Roboto', sans-serif;
   background-color: #F3FFE2;
-  color: #225378; 
+  color: #225378;
 }
 
 input, textarea {
@@ -44,6 +44,10 @@ a, a:visited {
   background-color: #225378;
 }
 
+.be-light-blue {
+  background-color: #1695A3;
+}
+
 .be-red {
   color: red !important;
 }
@@ -69,12 +73,12 @@ a, a:visited {
   padding: 10px 7px;
 }
 
-.field {
+.field, .top-space, .actions {
   margin-top: 1em;
 }
 
-.top-space {
-  margin-top: 1em;
+.text-left {
+  text-align: left;
 }
 
 .form-control {
