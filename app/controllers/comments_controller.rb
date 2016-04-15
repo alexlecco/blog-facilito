@@ -3,24 +3,7 @@ class CommentsController < ApplicationController
   before_action :set_article
   before_action :authenticate_user!
 
-  respond_to :html
-
-  def index
-    @comments = Comment.all
-    respond_with(@comments)
-  end
-
-  def show
-    respond_with(@comment)
-  end
-
-  def new
-    @comment = Comment.new
-    respond_with(@comment)
-  end
-
-  def edit
-  end
+  #respond_to :html
 
   def create
     @comment = current_user.comments.new(comment_params)
@@ -28,14 +11,12 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment.article, notice: 'Comment was successfully created' }
-        format.json { render :show, status: :created, location: @comment }
+        format.json { render :show, status: :created, location: @comment.article }
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
-
-    respond_with(@comment)
   end
 
   def update
@@ -47,6 +28,7 @@ class CommentsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
+    end
   end
 
   def destroy
@@ -57,17 +39,18 @@ class CommentsController < ApplicationController
     end
   end
 
+
   private
 
-    def set_article
-      @article = Article.find(params[:article_id])
-    end
+  def set_article
+    @article = Article.find(params[:article_id])
+  end
 
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
-    def comment_params
-      params.require(:comment).permit(:user_id, :article_id, :body)
-    end
+  def comment_params
+    params.require(:comment).permit(:user_id, :article_id, :body)
+  end
 end
