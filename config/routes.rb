@@ -1,9 +1,14 @@
 Blog::Application.routes.draw do
 
-  resources :comments
+  resources :articles do
+    resources :comments, only: [:create, :destroy, :update]
+  end
 
   devise_for :users
-  resources :articles
+
+  root 'welcome#index'
+
+
 =begin
   igual al CRUD:
     get    "/articles"          -> index
@@ -20,7 +25,7 @@ Blog::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
