@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # --- Autor's gems
 gem 'devise'
 gem 'jquery-turbolinks'
+gem 'paperclip'
 # ------------------------------------------------------------------------------
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
